@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Radio Player</title>
+  <title>> Cargando... <</title>
+	<link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
   	<link href="css/fontawesome.min.css" rel="stylesheet">
 	<link href="css/brands.css" rel="stylesheet">
 	<link href="css/solid.css" rel="stylesheet">
@@ -472,6 +473,63 @@ a:active {
     audio.volume = volumeBar.value / 100;
     volumeIndicator.textContent = volumeBar.value + "%";
   }
+
+const frames = [
+  "( •_•)",
+  "( •_•)⌐■-■",
+  "(⌐■_■)",
+  "(⌐■‿■)",
+  "(⌐■‿■)",
+  "(⌐■‿■)",
+  "(⌐■‿■)",
+  "(⌐■‿■)",
+  "(⌐■‿■)",
+  "(⌐■‿■)",
+  "(⌐■‿■)",
+  ">> Radio aKiLeS <<",
+  "> Radio aKiLeS <",
+  "> Radio aKiLeS <",
+  "> Radio aKiLeS <",
+  ">> Radio aKiLeS <<",
+  "> Radio aKiLeS <",
+  "> Radio aKiLeS <",
+  "> Radio aKiLeS <",
+  ">> Radio aKiLeS <<",
+  "> Radio aKiLeS <",
+  ">> Radio aKiLeS <<",
+  "> Radio aKiLeS <",
+  "> Radio aKiLeS <",
+  "> Radio aKiLeS <",
+  "> Radio aKiLeS <",
+  ">> Radio aKiLeS <<",        // Frame X
+  "> R@d!0 @|<1L3$ <",       // Frame X
+  "> |4D10 4k1L35 <",        // Frame X
+  "> |>~D!0 @k!L3$ <",      // Frame X
+  "> |||~!|o @!1L3$ <",     // Frame X
+  "> ~|||~!|o @!1L3 <",     // Frame X
+  "> ~|>~D!0 @k!L <",       // Frame X
+  "> |4D10 4k1L3 <",        // Frame X
+  "> R@d!0 @|<1 <",         // FRAME X
+  "> R@d!0 @|<1",         // FRAME X
+  "> R@d!0 @|",         // FRAME X
+  "> R@d!0 ",         // FRAME X
+  "> R@d!",         // FRAME X
+  "> R@",         // FRAME X
+  "> ",         // FRAME X
+  "‎"         // FRAME X
+];
+
+let currentFrameIndex = 0;
+
+function updateTitle() {
+  document.title = frames[currentFrameIndex];
+  currentFrameIndex = (currentFrameIndex + 1) % frames.length;
+
+  const interval = (currentFrameIndex === 11 || currentFrameIndex >= 20) ? 300 : 1000;
+  setTimeout(updateTitle, interval); // Change frames every 300ms for special frames, and 1000ms for others
+}
+
+updateTitle(); // Start the animation loop
   </script>
 </head>
 <body>
