@@ -99,7 +99,9 @@
   display: flex;
   align-items: center;
   width: 100%;
+  left: -8%;
   margin-top: 10px;
+  position: relative;
 }
 
 .volume-icon {
@@ -412,6 +414,15 @@ a:active {
     background-color: #ffffff;
     color: #ff3a00;
   }
+  
+  .volume-indicator {
+    position: absolute;
+    top: 15%;
+    right: -15%;
+    color: #fff;
+    font-size: 12px;
+    user-select: none;
+  }
 
 
   </style>
@@ -452,6 +463,15 @@ a:active {
       menu.classList.remove("open");
       blurredBackground.classList.remove("visible");
     }
+	
+	function updateVolume() {
+    var audio = document.getElementById("radio-player");
+    var volumeBar = document.getElementById("volume-bar");
+    var volumeIndicator = document.getElementById("volume-indicator");
+
+    audio.volume = volumeBar.value / 100;
+    volumeIndicator.textContent = volumeBar.value + "%";
+  }
   </script>
 </head>
 <body>
@@ -467,6 +487,7 @@ a:active {
         <div class="volume-bar-container">
           <i class="volume-icon">🔊</i>
           <input type="range" id="volume-bar" class="volume-bar" min="0" max="100" value="50" oninput="updateVolume()">
+		  <div class="volume-indicator" id="volume-indicator">50%</div>
         </div>
         <img class="radio-image" src="imagenes/logo.png" alt="Radio aKiLeS Image">
       </div>
