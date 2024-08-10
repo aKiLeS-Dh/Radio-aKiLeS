@@ -2,6 +2,9 @@
 <html>
 <head>
   <title>> Cargando... <</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
 	<link rel="icon" href="imagenes/favicon.ico" type="image/x-icon">
   	<link href="css/fontawesome.min.css" rel="stylesheet">
 	<link href="css/brands.css" rel="stylesheet">
@@ -20,7 +23,7 @@
     }
     
     .radio {
-      position: absolute;
+      position: fixed;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
@@ -51,16 +54,49 @@
       color: #fff;
       user-select: none;
     }
+
+    .radio-name {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      color: #fff;
+      user-select: none;
+    }
 	
 #particles-js {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
-  background-image: url("imagenes/nyan_cat.gif");
 
   background-repeat: no-repeat;
   background-size: 30%;
   background-position: bottom;
+}
+
+.nyan-cat {
+  position: fixed;
+  left: 0%;
+  bottom: -20%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url("imagenes/nyan_cat.gif");
+  background-size: 100%;
+  background-position: bottom;
+  z-index: -1;
+}
+
+.nyan-cat2 {
+  position: fixed;
+  left: 0%;
+  bottom: -5%;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: url("imagenes/nyan.gif");
+  background-size: 10%;
+  background-position: bottom;
+  z-index: -1;
 }
 
 .play-button {
@@ -142,9 +178,9 @@
 }
 
 .circle-button {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+  position: fixed;
+  bottom: 2.6%;
+  left: 1.2%;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -549,10 +585,12 @@ updateTitle(); // Start the animation loop
         </div>
         <img class="radio-image" src="imagenes/logo.png" alt="Radio aKiLeS Image">
       </div>
+      <div class="nyan-cat"></div>
     </div>
   </div>
   <div id="menu" class="menu">
     <div class="menu-header">
+      <div class="nyan-cat2"></div>
       <span class="menu-title">Con amor para NeoCity <3</span>
       <span class="close-button" onclick="closeSettings()">✕</span>
     </div>
